@@ -1,5 +1,6 @@
 import './App.css';
 import Row from './Row.js'
+import requests from './requests.js'
 
 function App() {
   return (
@@ -7,14 +8,14 @@ function App() {
       <h1>
         lets build nextflix frontend
       </h1>
-      <Row title="Netflix Originals" />
-      <Row title="Trending Now" />
-      <Row title="Top Rated" />
-      <Row title="Action Movies" />
-      <Row title="Comedy Movies" />
-      <Row title="Horror Movies" />
-      <Row title="Romance Movies" />
-      <Row title="Documentaries" />
+      <Row title="Netflix Originals" fetchUrl={requests.fetchNextflixOriginals} />
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }
