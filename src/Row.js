@@ -9,11 +9,15 @@ let Row = function ({ title, fetchUrl }){
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(fetchUrl)
-            console.log(request)
+         
+            console.log(request.data.results)
+            setMovies(request.data.results)
             return request
         } 
         fetchData()
-    }, []) 
+    }, [fetchUrl]) 
+
+    console.log(movies)
 
     //when row loads, i want to make a request to tdmb to load movies
 
@@ -21,6 +25,7 @@ let Row = function ({ title, fetchUrl }){
         <div>
             <h2>{ title }</h2>
             {/* containers inside */}
+            {/* <h1>{ data.results }</h1> */}
         </div>
     )
 }
